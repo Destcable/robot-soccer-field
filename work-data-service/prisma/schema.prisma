@@ -15,3 +15,11 @@ model Soccer {
   width Int
   unit String
 }
+
+model Constructor { 
+  id   Int          @id @default(autoincrement())
+  name String
+  length Int
+  width Int
+  unit String
+}

@@ -13,8 +13,15 @@ app.get('/soccer/field', async (req, res) => {
 })
 
 app.post('/soccer/field', async (req, res) => { 
-    console.log(req.body)
     return res.json(await prisma.soccer.create({ data: req.body }))
+})
+
+app.get('/soccer/constructor', async (req, res) => { 
+    return res.json(await prisma.constructor.findMany());
+})
+
+app.post('/soccer/constructor', async (req, res) => { 
+    return res.json(await prisma.constructor.create({ data: req.body }))
 })
 
 app.listen(3000)
